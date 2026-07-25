@@ -1,0 +1,52 @@
+# Capstone1 — Project Rules
+
+## Tech stack
+
+- **Frontend**: React (functional components, hooks)
+- **Backend**: Node.js with Express
+- **Database**: MongoDB (Mongoose for models/schemas)
+- Prefer the existing project structure once code is added; do not introduce new frameworks without a clear reason.
+
+## Architecture
+
+- Separate client and server concerns (e.g. `client/` and `server/` or equivalent).
+- REST-style API routes on Express; validate input on the server.
+- Environment secrets in `.env` — never commit `.env`; use `.env.example` for documented keys only.
+- Use `async/await` for asynchronous code; avoid raw `.then()` chains in new code.
+
+## Coding standards
+
+- Write clean, readable code with the smallest correct change for each task.
+- Reuse components, routes, and utilities instead of duplicating logic.
+- Match naming, imports, and patterns already used in nearby files.
+- Add comments only for non-obvious business rules or tricky technical details.
+- Avoid unnecessary dependencies; prefer built-ins or what the repo already uses.
+- Use Conventional Commits for commit messages when committing (e.g. `feat:`, `fix:`, `refactor:`).
+
+## React
+
+- Functional components and custom hooks for shared logic.
+- Keep components focused; lift state only when needed.
+- Handle loading and error states for data-fetching UI.
+
+## Express / API
+
+- Centralize error handling where the app already does (middleware or route wrappers).
+- Return consistent JSON shapes for success and errors.
+- Use appropriate HTTP status codes.
+
+## MongoDB
+
+- Define schemas with Mongoose; use indexes where queries are frequent.
+- Do not expose internal MongoDB `_id` quirks in API contracts without documenting them.
+
+## Safety
+
+- Do not commit secrets, credentials, or real `.env` files.
+- Do not run destructive git operations unless explicitly requested.
+
+## Agent behavior
+
+- Minimize diff scope; do not refactor unrelated code in the same change.
+- Run or suggest relevant tests/commands when fixing bugs or adding features, if the project has them.
+- Only create git commits when the user explicitly asks.
