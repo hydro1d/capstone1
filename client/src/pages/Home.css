@@ -1,0 +1,21 @@
+.home h1 {
+  margin: 0 0 12px;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+}
+
+.home-lead {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 36ch;
+}
+
+.home-lead a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.home-lead a:hover {
+  text-decoration: underline;
+}
